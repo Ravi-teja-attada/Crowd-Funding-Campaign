@@ -51,15 +51,6 @@ contract Campaign {
     }
 
     function spendRequest(uint value, string memory description, address payable recipient) public ownerOnly{
-        // Request memory newRequest = Request({
-        //     description: description,
-        //     value: value,
-        //     recipient: recipient,
-        //     completed: false,
-        //     approvalCount: 0
-        // });
-
-        // requests.push(newRequest);
 
         Request storage newRequest = requests.push();
         newRequest.description = description;
@@ -87,5 +78,20 @@ contract Campaign {
         require(request.approvalCount > (approversCount/2));
 
         request.recipient.transfer(request.value);
+        request.completed = true;
+    }
+
+    function getSummary() public view returns(uint,uint,uint,uint,address){
+        return(
+            address(this).balance,
+            minContribution,
+            requests.length,
+            approversCount,
+            owner
+        );
+    }
+
+    function getRequestsCount() public view returns(uint){
+        return requests.length;
     }
 }

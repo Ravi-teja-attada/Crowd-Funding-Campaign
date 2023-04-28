@@ -3,9 +3,10 @@ require('dotenv').config({path:`${__dirname}/./../.env`});
 const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
 
-const infuraNode = 'https://goerli.infura.io/v3/c87ddb98e34041c690fd52ea034c45e2';
+const infuraNode = 'https://sepolia.infura.io/v3/de8c88f43fcd4a20a0d34d7d8e6f8989';
 const provider = new HDWalletProvider(
-    process.env.MNEMONIC_CODE,infuraNode    
+  'health opinion gallery uncover bread country mother humor supply scatter oven twelve',
+  infuraNode
 );
 
 const web3 = new Web3(provider);

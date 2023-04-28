@@ -3,6 +3,8 @@ import { Card, CardGroup, Button } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import instance from "../ethereum/factory";
 import Layout from '../components/Layout';
+import {Link} from '../routes';
+
 
 function CampaignList() {
     const [campaigns, setCampaigns] = useState([]);
@@ -17,7 +19,7 @@ function renderCampaigns(){
   const items = campaigns.map((address)=>{
     return{
       header: address,
-      description: <a>View Campaign</a>,
+      description: (<Link route={`/campaigns/${address}`}><a>View Campaign</a></Link>),
       fluid: true
     }
     
@@ -27,12 +29,16 @@ function renderCampaigns(){
 }
     
     return <Layout>
+    <Link route='/campaigns/new'>
+    <a>
     <Button 
       floated="right"
       content='Create Campaign'
       icon='add'
       primary
     />
+    </a>
+    </Link>
     {renderCampaigns()}
     </Layout>
 }

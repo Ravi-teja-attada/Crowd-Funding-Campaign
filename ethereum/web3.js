@@ -11,7 +11,7 @@ if(typeof window !== 'undefined' && typeof window.ethereum !== 'undefined' ){
     // rendering on next server or metamask not installed in browser
 
     const provider = new Web3.providers.HttpProvider(
-        'https://goerli.infura.io/v3/c87ddb98e34041c690fd52ea034c45e2'
+        'https://sepolia.infura.io/v3/de8c88f43fcd4a20a0d34d7d8e6f8989'
     );
 
     web3 = new Web3(provider);

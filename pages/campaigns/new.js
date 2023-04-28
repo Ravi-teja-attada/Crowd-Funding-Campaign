@@ -3,6 +3,7 @@ import { Button, Form, Input, Message } from "semantic-ui-react";
 import Layout from "../../components/Layout";
 import web3 from '../../ethereum/web3';
 import factory from '../../ethereum/factory';
+import { Router } from "../../routes";
 
 function New() {
   const [input, setInput] = useState('');
@@ -18,6 +19,7 @@ function New() {
     .send({
       from: accounts[0]
     });
+    Router.pushRoute('/');
   } catch (error) {
     setMessage(
       <Message negative>
@@ -33,7 +35,7 @@ function New() {
  }
     return <Layout>
     <h1>New Campaign</h1>
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit} error={!!message}>
     <Form.Field>
       <label>Minimum Contribution</label>
       <Input
