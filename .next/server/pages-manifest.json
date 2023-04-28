@@ -1,8 +1,11 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/campaigns/requests/list": "pages/campaigns/requests/list.js",
+  "/campaigns/requests/new": "pages/campaigns/requests/new.js",
   "/campaigns/show": "pages/campaigns/show.js",
-  "/": "pages/index.js"
+  "/campaigns/new": "pages/campaigns/new.html",
+  "/": "pages/index.html",
+  "/campaigns/requests/list": "pages/campaigns/requests/list.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
